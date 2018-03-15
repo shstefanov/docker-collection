@@ -10,7 +10,7 @@ status:
 	@sudo docker ps | grep $(APP_PREFIX)_ || echo "No running containers"
 
 images:
-	$(BUILD_COMMAND) $(APP_PREFIX)_base_image   -f ./Dockerfiles/base_image.Dockerfile .
+	$(BUILD_COMMAND) $(APP_PREFIX)_base_image   -f ./Dockerfiles/base_image.Dockerfile  .
 	$(BUILD_COMMAND) $(APP_PREFIX)_nginx_entry  -f ./Dockerfiles/nginx_entry.Dockerfile .
 	$(BUILD_COMMAND) $(APP_PREFIX)_php_entry    -f ./Dockerfiles/php_entry.Dockerfile   .
 
