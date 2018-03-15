@@ -12,10 +12,12 @@ status:
 images:
 	$(BUILD_COMMAND) $(APP_PREFIX)_base_image   -f ./Dockerfiles/base_image.Dockerfile .
 	$(BUILD_COMMAND) $(APP_PREFIX)_nginx_entry  -f ./Dockerfiles/nginx_entry.Dockerfile .
+	$(BUILD_COMMAND) $(APP_PREFIX)_php_entry    -f ./Dockerfiles/php_entry.Dockerfile   .
 
 remove-images:
 	@sudo docker rmi $(APP_PREFIX)_base_image    || echo "Can't find image $(APP_PREFIX)_base_image"
 	@sudo docker rmi $(APP_PREFIX)_nginx_entry   || echo "Can't find image $(APP_PREFIX)_nginx_entry"
+	@sudo docker rmi $(APP_PREFIX)_php_entry     || echo "Can't find image $(APP_PREFIX)_php_entry"
 
 attach:
 	sudo docker exec -it $(target) bash || echo "Exit"
