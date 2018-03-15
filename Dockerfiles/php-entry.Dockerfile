@@ -7,5 +7,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 ADD ./conf/php.nginx.conf /etc/nginx/sites-enabled/default
 
-# CMD service php7.0-fpm start
 CMD service php7.0-fpm start && nginx -c /etc/nginx/nginx.conf -g "daemon off;"
