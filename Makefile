@@ -19,8 +19,15 @@ remove-images:
 	@sudo docker rmi $(APP_PREFIX)_nginx_entry   || echo "Can't find image $(APP_PREFIX)_nginx_entry"
 	@sudo docker rmi $(APP_PREFIX)_php_entry     || echo "Can't find image $(APP_PREFIX)_php_entry"
 
+
 attach:
-	sudo docker exec -it $(target) bash || echo "Exit"
+	@sudo docker exec -it $(target) bash || echo "Exit"
+
 
 start:
 	@sudo docker-compose up
+
+
+stop:
+	@sudo docker-compose down
+
