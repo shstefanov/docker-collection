@@ -1,0 +1,18 @@
+version: '3'
+services:
+  orbits-app-1:
+    image: "orbits_nginx_entry"
+    ports:
+     - "5000:80"
+  orbits-app-2:
+    image: "orbits_nginx_entry"
+    ports:
+     - "5001:80"
+  orbits-app-3:
+    image: "orbits_nginx_entry"
+    ports:
+     - "5002:80"
+  orbits-app-4:
+    image: "orbits_nginx_entry"
+    ports:
+     - "5003:80"
