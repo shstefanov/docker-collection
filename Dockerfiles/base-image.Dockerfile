@@ -2,4 +2,6 @@
 
 FROM debian
 
+WORKDIR /srv
+
 RUN apt-get update
