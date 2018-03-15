@@ -2,24 +2,24 @@ version: '3'
 services:
   
   orbits-app:
-    container_name: "orbits_nginx_entry"
-    image:          "orbits_nginx_entry"
+    container_name: "orbits-nginx-entry"
+    image:          "orbits-nginx-entry"
     ports:
       - "5000:80"
     volumes:
       - ./src:/srv
   
   php-app-a:
-    container_name: "php_app_a"
-    image:          "orbits_php_entry"
+    container_name: "php-app-a"
+    image:          "orbits-php-entry"
     ports:
       - "5001:80"
     volumes:
       - ./src/app_a:/srv
 
   php-app-b:
-    container_name: "php_app_b"
-    image:          "orbits_php_entry"
+    container_name: "php-app-b"
+    image:          "orbits-php-entry"
     ports:
       - "5002:80"
     volumes:

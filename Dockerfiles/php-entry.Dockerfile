@@ -1,6 +1,5 @@
-FROM orbits_base_image
+FROM orbits-nginx-entry
 
-RUN apt-get install -y nginx
 RUN apt-get install -y php7.0-fpm php7.0-cli 
 RUN ln -s /var/run /run
 RUN mkdir /run/php

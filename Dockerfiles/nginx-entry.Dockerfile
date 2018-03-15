@@ -1,4 +1,4 @@
-FROM orbits_base_image
+FROM orbits-base-image
 
 RUN apt-get install -y nginx
 
