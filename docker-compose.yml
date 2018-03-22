@@ -1,7 +1,23 @@
 version: '3'
 services:
   
-  orbits-app:
+  log-server:
+    container_name: "orbits-log-server"
+    image:          "orbits-php-entry"
+    ports:
+      - "5002:80"
+    volumes:
+      - ./src/log-server:/srv
+
+  config-server:
+    container_name: "orbits-config-server"
+    image:          "orbits-php-entry"
+    ports:
+      - "5001:80"
+    volumes:
+      - ./src/config-server:/srv
+
+  orbits-game:
     container_name: "orbits-nginx-entry"
     image:          "orbits-nginx-entry"
     ports:
@@ -9,14 +25,8 @@ services:
     volumes:
       - ./src:/srv
   
-  config-server:
-    container_name: "config-server"
-    image:          "orbits-php-entry"
-    ports:
-      - "5001:80"
-    volumes:
-      - ./src/config-server:/srv
 
-  nodejs-server:
-    container_name: "nodejs-server"
-    image:          "orbits-base-nodejs"
+
+  # nodejs-server:
+  #   container_name: "orbits-nodejs-server"
+  #   image:          "orbits-base-nodejs"
