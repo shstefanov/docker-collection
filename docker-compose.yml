@@ -9,18 +9,14 @@ services:
     volumes:
       - ./src:/srv
   
-  php-app-a:
-    container_name: "php-app-a"
+  config-server:
+    container_name: "config-server"
     image:          "orbits-php-entry"
     ports:
       - "5001:80"
     volumes:
-      - ./src/app_a:/srv
+      - ./src/config-server:/srv
 
-  php-app-b:
-    container_name: "php-app-b"
-    image:          "orbits-php-entry"
-    ports:
-      - "5002:80"
-    volumes:
-      - ./src/app_b:/srv
+    nodejs-server:
+      container_name: "nodejs-server"
+      image:          "orbits-base-nodejs"
