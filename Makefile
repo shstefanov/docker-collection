@@ -13,11 +13,13 @@ images:
 	$(BUILD_COMMAND) $(APP_PREFIX)-base-image   -f ./Dockerfiles/base-image.Dockerfile  .
 	$(BUILD_COMMAND) $(APP_PREFIX)-nginx-entry  -f ./Dockerfiles/nginx-entry.Dockerfile .
 	$(BUILD_COMMAND) $(APP_PREFIX)-php-entry    -f ./Dockerfiles/php-entry.Dockerfile   .
+	$(BUILD_COMMAND) $(APP_PREFIX)-base-nodejs  -f ./Dockerfiles/base-nodejs.Dockerfile .
 
 remove-images:
 	@sudo docker rmi $(APP_PREFIX)-base-image    || echo "Can't find image $(APP_PREFIX)-base-image"
 	@sudo docker rmi $(APP_PREFIX)-nginx-entry   || echo "Can't find image $(APP_PREFIX)-nginx-entry"
 	@sudo docker rmi $(APP_PREFIX)-php-entry     || echo "Can't find image $(APP_PREFIX)-php-entry"
+	@sudo docker rmi $(APP_PREFIX)-base-nodejs   || echo "Can't find image $(APP_PREFIX)-base-nodejs"
 
 
 attach:
