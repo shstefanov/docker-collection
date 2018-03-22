@@ -17,6 +17,6 @@ services:
     volumes:
       - ./src/config-server:/srv
 
-    nodejs-server:
-      container_name: "nodejs-server"
-      image:          "orbits-base-nodejs"
+  nodejs-server:
+    container_name: "nodejs-server"
+    image:          "orbits-base-nodejs"
