@@ -14,7 +14,7 @@ images:
 	$(BUILD_COMMAND) $(APP_PREFIX)-nginx-entry  -f ./Dockerfiles/nginx-entry.Dockerfile .
 	$(BUILD_COMMAND) $(APP_PREFIX)-php-entry    -f ./Dockerfiles/php-entry.Dockerfile   .
 	$(BUILD_COMMAND) $(APP_PREFIX)-base-nodejs  -f ./Dockerfiles/base-nodejs.Dockerfile .
-	$(BUILD_COMMAND) $(APP_PREFIX)-pgsql        -f ./Dockerfiles/pgsql.Dockerfile .
+	$(BUILD_COMMAND) $(APP_PREFIX)-pgsql        -f ./Dockerfiles/pgsql.Dockerfile       .
 
 remove-images:
 	@sudo docker rmi $(APP_PREFIX)-base-image    || echo "Can't find image $(APP_PREFIX)-base-image"
