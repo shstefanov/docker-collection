@@ -29,7 +29,8 @@ services:
     container_name: "orbits-pgsql"
     image:          "orbits-pgsql"
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/9.6/main
+      - ./data/postgresql:/var/lib/postgresql/data
+      
 
 
     # /var/lib/postgresql/9.6/main
