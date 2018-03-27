@@ -32,8 +32,6 @@ services:
       - ./data/postgresql:/var/lib/postgresql/data
       
 
-
-    # /var/lib/postgresql/9.6/main
   
 
 
