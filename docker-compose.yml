@@ -3,7 +3,7 @@ services:
   
   log-server:
     container_name: "orbits-log-server"
-    image:          "orbits-php-entry"
+    image:          "orbits-laravel-entry"
     ports:
       - "5002:80"
     volumes:
@@ -11,7 +11,7 @@ services:
 
   config-server:
     container_name: "orbits-config-server"
-    image:          "orbits-php-entry"
+    image:          "orbits-laravel-entry"
     ports:
       - "5001:80"
     volumes:
@@ -30,11 +30,4 @@ services:
     image:          "orbits-pgsql"
     volumes:
       - ./data/postgresql:/var/lib/postgresql/data
-      
-
-  
-
-
-  # nodejs-server:
-  #   container_name: "orbits-nodejs-server"
-  #   image:          "orbits-base-nodejs"
+      - ./db:/srv
