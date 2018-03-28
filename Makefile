@@ -8,10 +8,17 @@ BUILD_COMMAND = @sudo docker build -t
 # Helpers:
 
 # Reads input from keyboard when used
-C_ID_INPUT = $(shell bash -c 'read -p "Container name or ID: " target; echo $$target')
+C_ID_INPUT    = $(shell bash -c 'read -p "Container name or ID: " target; echo $$target')
 
 show-containers:
 	@sudo docker ps | grep $(APP_PREFIX)-
+
+
+
+
+
+
+
 
 status:
 	@echo "IMAGES:"
