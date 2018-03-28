@@ -19,7 +19,7 @@ Start application:
   make start
 ```
 
-Attach to container (get names from make start command):
+Attach to container (will prompt for container id or name):
 ```bash
   make attach
 ```
