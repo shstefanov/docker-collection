@@ -21,5 +21,5 @@ Start application:
 
 Attach to container (get names from make start command):
 ```bash
-  make attach target=container_name
+  make attach
 ```
