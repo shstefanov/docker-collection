@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS orbits_production;
+DROP DATABASE IF EXISTS orbits_dev;
+DROP DATABASE IF EXISTS orbits_test;
+
+
