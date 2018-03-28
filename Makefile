@@ -60,8 +60,9 @@ clean:
 test:
 	@echo "Make test"
 
-pg:
-	@sudo docker exec -it $(APP_PREFIX)-pgsql su - postgres -c 'psql -c \\l && psql'  || echo "Exit"
+pg: show-containers
+	@sudo docker exec -it $(C_ID_INPUT) su - postgres -c \
+		'psql -c \\l && psql -d `read -p "Enter database name: " db_name; echo $$db_name`'
 
 pg-setup: show-containers
 	@echo "\n"
