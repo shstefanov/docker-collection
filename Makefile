@@ -56,8 +56,11 @@ test:
 pg:
 	@sudo docker exec -it $(APP_PREFIX)-pgsql su - postgres -c 'psql -c \\l && psql'  || echo "Exit"
 
-pg-setup:
-	@sudo docker exec -it $(target) su - postgres -c 'psql -f /srv/setup.sql'|| echo "Exit"
+pg-setup: show-containers
+	@echo "\n"
+	@echo "Creating users and databases for application"
+	@echo "Please, select container to apply ./data/setup.sql to it's PostgreSQL database"
+	@sudo docker exec -it $(C_ID_INPUT) su - postgres -c 'psql -f /srv/setup.sql'|| echo "Exit"
 
 
 
