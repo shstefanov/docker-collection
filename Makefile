@@ -70,6 +70,12 @@ pg-setup: show-containers
 	@echo "Please, select container to apply ./data/setup.sql to it's PostgreSQL database"
 	@sudo docker exec -it $(C_ID_INPUT) su - postgres -c 'psql -f /srv/setup.sql'|| echo "Exit"
 
+pg-drop: show-containers
+	@echo "\n"
+	@echo "Creating users and databases for application"
+	@echo "Please, select container to apply ./data/setup.sql to it's PostgreSQL database"
+	@sudo docker exec -it $(C_ID_INPUT) su - postgres -c 'psql -f /srv/drop.sql'|| echo "Exit"
+
 
 
 
