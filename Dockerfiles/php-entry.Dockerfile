@@ -13,6 +13,7 @@ RUN mkdir /run/php
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Adding config for handlig php with nginx
+
 ADD ./conf/php.nginx.conf /etc/nginx/sites-enabled/default
 
 
