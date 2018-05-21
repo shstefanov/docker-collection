@@ -1,5 +1,6 @@
 APP_PREFIX    = orbits
 BUILD_COMMAND = @sudo docker build -t
+config=docker-compose.yml
 
 
 
@@ -50,7 +51,7 @@ attach:  show-containers
 	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
 
 start:
-	@sudo docker-compose up
+	sudo docker-compose --file $(config) up -d
 
 
 clean:
