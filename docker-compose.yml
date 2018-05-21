@@ -1,6 +1,14 @@
 version: '3'
 services:
   
+  orbits-game:
+    container_name: "orbits-nginx-entry"
+    image:          "orbits-nginx-entry"
+    ports:
+      - "5000:80"
+    volumes:
+      - ./src:/srv
+  
   log-server:
     container_name: "orbits-log-server"
     image:          "orbits-laravel-entry"
@@ -16,14 +24,6 @@ services:
       - "5001:80"
     volumes:
       - ./src/config-server:/srv
-
-  orbits-game:
-    container_name: "orbits-nginx-entry"
-    image:          "orbits-nginx-entry"
-    ports:
-      - "5000:80"
-    volumes:
-      - ./src:/srv
 
   orbits-pgsql:
     container_name: "orbits-pgsql"
