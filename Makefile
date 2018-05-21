@@ -54,7 +54,7 @@ start:
 	sudo docker-compose --file $(config) up -d
 
 
-clean:
+stop:
 	@sudo docker-compose down
 
 

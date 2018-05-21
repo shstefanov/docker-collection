@@ -20,6 +20,9 @@ Remove application images:
 Start application:
 ```bash
   make start
+Stop application:
+```bash
+  make stop
 ```
 
 Attach to container (will prompt for container id or name):
