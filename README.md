@@ -1,3 +1,6 @@
+Needs docker and docker-compose installed, also root privileges to build images and run containers
+
+
 Show application images, containers, networks:
 ```bash
   make status
