@@ -19,7 +19,9 @@ Remove application images:
 
 Start application:
 ```bash
-  make start
+  make start [ config=./alternate_config_file.yml ]
+```
+
 Stop application:
 ```bash
   make stop

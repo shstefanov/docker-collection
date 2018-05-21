@@ -28,7 +28,7 @@ status:
 	@echo "RUNNING CONTAINERS:"
 	@sudo docker ps | grep $(APP_PREFIX)- || echo "No running containers"
 	@echo "\n"
-	@echo "To attach to running container, use: 'make attach target=container_name'"
+	@echo "To attach to running container, use: 'make attach'"
 
 images:
 	$(BUILD_COMMAND) $(APP_PREFIX)-base-image    -f ./Dockerfiles/base-image.Dockerfile    .
