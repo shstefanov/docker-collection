@@ -24,7 +24,7 @@ status:
 	@echo "IMAGES:"
 	@sudo docker images | grep $(APP_PREFIX)- || echo "No images to show"
 	@echo "\n"
-	@echo "RUNNING CONTAINERS: (TODO)"
+	@echo "RUNNING CONTAINERS:"
 	@sudo docker ps | grep $(APP_PREFIX)- || echo "No running containers"
 	@echo "\n"
 	@echo "To attach to running container, use: 'make attach target=container_name'"
