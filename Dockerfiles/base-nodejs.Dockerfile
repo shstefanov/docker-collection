@@ -1,6 +1,6 @@
 FROM orbits-base-image
 
-ENV NODE_VERSION v9.9.0
+ENV NODE_VERSION v10.1.0
 
 RUN apt-get install -y wget
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
