@@ -53,13 +53,16 @@ attach:  show-containers
 	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
 
 start: images
-	touch start
-	sudo docker-compose --file $(config) up -d
+	@touch start
+	@sudo docker-compose --file $(config) up -d
 
 
 stop:
+	@rm start || exit 0
 	@sudo docker-compose down
 
+logs:
+	sudo watch -n 1 docker-compose logs
 
 test:
 	@echo "Make test"
