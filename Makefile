@@ -61,8 +61,8 @@ stop:
 	@rm start || exit 0
 	@sudo docker-compose down
 
-logs:
-	sudo watch -n 1 docker-compose logs
+logs: show-containers
+	@sudo docker-compose logs | grep $(C_ID_INPUT)
 
 test:
 	@echo "Make test"
