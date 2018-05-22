@@ -10,4 +10,4 @@ ADD ./conf/laravel.nginx.conf /etc/nginx/sites-enabled/default
 # 1 - chown /srv/storage to grant write permissions to laravel application for this folder
 # 2 - Start php-fpm service
 # 3 - Start nginx in command line mode to keep container running
-CMD chown -R www-data:www-data /srv/storage && service php7.1-fpm start && nginx -c /etc/nginx/nginx.conf -g "daemon off;"
+CMD chown -R www-data:www-data /srv/storage && service php7.2-fpm start && nginx -c /etc/nginx/nginx.conf -g "daemon off;"
