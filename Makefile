@@ -19,7 +19,7 @@ show-containers:
 
 
 
-
+# Info and logs tasks
 
 status:
 	@echo "IMAGES:"
@@ -29,6 +29,15 @@ status:
 	@sudo docker ps | grep $(APP_PREFIX)- || echo "No running containers"
 	@echo "\n"
 	@echo "To attach to running container, use: 'make attach'"
+
+logs: show-containers
+	@sudo docker-compose logs | grep $(C_ID_INPUT)
+
+
+
+
+
+# Images management tasks
 
 images: Dockerfiles/*.Dockerfile
 	touch images
@@ -49,8 +58,8 @@ remove-images:
 	@sudo docker rmi $(APP_PREFIX)-pgsql         || echo "Can't find image $(APP_PREFIX)-pgsql"
 
 
-attach:  show-containers
-	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
+
+# Containers management tasks
 
 start: images
 	@touch start
@@ -61,8 +70,19 @@ stop:
 	@rm start || exit 0
 	@sudo docker-compose down
 
-logs: show-containers
-	@sudo docker-compose logs | grep $(C_ID_INPUT)
+# Shows running containers and prompts for container name to attach to
+attach:  show-containers
+	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
+
+
+
+# Source management tasks (needs git)
+
+add-source:
+	# Add git source here
+
+
+
 
 test:
 	@echo "Make test"
