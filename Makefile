@@ -52,7 +52,8 @@ remove-images:
 attach:  show-containers
 	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
 
-start:
+start: images
+	touch start
 	sudo docker-compose --file $(config) up -d
 
 
