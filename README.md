@@ -31,3 +31,8 @@ Attach to container (will prompt for container id or name):
 ```bash
   make attach
 ```
+
+Execute command on running container (will prompt for container id or name):
+```bash
+  make exec
+```

@@ -10,6 +10,7 @@ config=docker-compose.yml
 
 # Reads input from keyboard when used
 C_ID_INPUT    = $(shell bash -c 'read -p "Container name or ID: " target; echo $$target')
+COMMAND_INPUT = $(shell bash -c 'read -p "Enter command: " target; echo $$target')
 
 show-containers:
 	@sudo docker ps | grep $(APP_PREFIX)-
@@ -74,6 +75,9 @@ stop:
 attach:  show-containers
 	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
 
+exec:  show-containers
+	@sudo docker exec -it $(C_ID_INPUT) $(COMMAND_INPUT) || echo "Exit"
+	
 
 
 # Source management tasks (needs git)
