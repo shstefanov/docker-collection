@@ -12,16 +12,12 @@ services:
   log-server:
     container_name: "orbits-log-server"
     image:          "orbits-laravel-entry"
-    ports:
-      - "5002:80"
     volumes:
       - ./src/log-server:/srv
 
   config-server:
     container_name: "orbits-config-server"
     image:          "orbits-laravel-entry"
-    ports:
-      - "5001:80"
     volumes:
       - ./src/config-server:/srv
 
