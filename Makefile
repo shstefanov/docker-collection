@@ -40,7 +40,7 @@ logs: show-containers
 
 # Images management tasks
 
-images: Dockerfiles/*.Dockerfile
+images:
 	$(BUILD_COMMAND) $(APP_PREFIX)-base-image    -f ./Dockerfiles/base-image.Dockerfile    .
 	$(BUILD_COMMAND) $(APP_PREFIX)-nginx-entry   -f ./Dockerfiles/nginx-entry.Dockerfile   .
 	$(BUILD_COMMAND) $(APP_PREFIX)-php-entry     -f ./Dockerfiles/php-entry.Dockerfile     .
