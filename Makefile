@@ -75,6 +75,7 @@ stop:
 attach:  show-containers
 	@sudo docker exec -it $(C_ID_INPUT) bash || echo "Exit"
 
+# Execute command on a container
 exec:  show-containers
 	@sudo docker exec -it $(C_ID_INPUT) $(COMMAND_INPUT) || echo "Exit"
 	
