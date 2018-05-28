@@ -56,6 +56,8 @@ remove-images:
 	@sudo docker rmi $(APP_PREFIX)-base-nodejs   || echo "Can't find image $(APP_PREFIX)-base-nodejs"
 	@sudo docker rmi $(APP_PREFIX)-pgsql         || echo "Can't find image $(APP_PREFIX)-pgsql"
 
+setup:
+	@sudo docker run -v `pwd`/src:/srv -it $(image) $(command)
 
 
 # Containers management tasks

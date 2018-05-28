@@ -16,6 +16,11 @@ Remove application images:
   make remove-images
 ```
 
+Run container from specified image and execute given command
+```bash
+  make setup image=image-name command="command to run"
+```
+
 
 Start application:
 ```bash
