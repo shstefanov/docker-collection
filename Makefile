@@ -41,7 +41,6 @@ logs: show-containers
 # Images management tasks
 
 images: Dockerfiles/*.Dockerfile
-	touch images
 	$(BUILD_COMMAND) $(APP_PREFIX)-base-image    -f ./Dockerfiles/base-image.Dockerfile    .
 	$(BUILD_COMMAND) $(APP_PREFIX)-nginx-entry   -f ./Dockerfiles/nginx-entry.Dockerfile   .
 	$(BUILD_COMMAND) $(APP_PREFIX)-php-entry     -f ./Dockerfiles/php-entry.Dockerfile     .
@@ -50,7 +49,6 @@ images: Dockerfiles/*.Dockerfile
 	$(BUILD_COMMAND) $(APP_PREFIX)-pgsql         -f ./Dockerfiles/pgsql.Dockerfile         .
 
 remove-images:
-	rm images
 	@sudo docker rmi $(APP_PREFIX)-base-image    || echo "Can't find image $(APP_PREFIX)-base-image"
 	@sudo docker rmi $(APP_PREFIX)-nginx-entry   || echo "Can't find image $(APP_PREFIX)-nginx-entry"
 	@sudo docker rmi $(APP_PREFIX)-php-entry     || echo "Can't find image $(APP_PREFIX)-php-entry"
@@ -62,7 +60,7 @@ remove-images:
 
 # Containers management tasks
 
-start: images
+start:
 	@touch start
 	@sudo docker-compose --file $(config) up -d
 
