@@ -27,3 +27,9 @@ services:
     volumes:
       - ./data/postgresql:/var/lib/postgresql/data
       - ./db:/srv
+
+  orbits-mongodb:
+    container_name: "orbits-mongodb"
+    image:          "orbits-mongodb"
+    volumes:
+      - ./data/mongodb:/var/lib/mongodb

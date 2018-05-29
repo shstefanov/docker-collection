@@ -47,6 +47,7 @@ images:
 	$(BUILD_COMMAND) $(APP_PREFIX)-laravel-entry -f ./Dockerfiles/laravel-entry.Dockerfile .
 	$(BUILD_COMMAND) $(APP_PREFIX)-base-nodejs   -f ./Dockerfiles/base-nodejs.Dockerfile   .
 	$(BUILD_COMMAND) $(APP_PREFIX)-pgsql         -f ./Dockerfiles/pgsql.Dockerfile         .
+	$(BUILD_COMMAND) $(APP_PREFIX)-mongodb       -f ./Dockerfiles/mongodb.Dockerfile       .
 
 remove-images:
 	@sudo docker rmi $(APP_PREFIX)-base-image    || echo "Can't find image $(APP_PREFIX)-base-image"
@@ -55,6 +56,7 @@ remove-images:
 	@sudo docker rmi $(APP_PREFIX)-laravel-entry || echo "Can't find image $(APP_PREFIX)-laravel-entry"
 	@sudo docker rmi $(APP_PREFIX)-base-nodejs   || echo "Can't find image $(APP_PREFIX)-base-nodejs"
 	@sudo docker rmi $(APP_PREFIX)-pgsql         || echo "Can't find image $(APP_PREFIX)-pgsql"
+	@sudo docker rmi $(APP_PREFIX)-mongodb       || echo "Can't find image $(APP_PREFIX)-mongodb"
 
 setup:
 	@sudo docker run -v `pwd`/src:/srv -it $(image) $(command)
